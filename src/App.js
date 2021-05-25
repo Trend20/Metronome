@@ -3,7 +3,7 @@ import Metronome from './component/Metronome';
 
 function App() {
 	return (
-		<div className="App">
+		<div className="app">
 			<Metronome />
 		</div>
 	);
