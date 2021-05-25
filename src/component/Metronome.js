@@ -24,6 +24,20 @@ class Metronome extends Component {
 		this.setState({
 			bpm: event.target.value,
 		});
+
+		if (this.state.playing) {
+			clearInterval(this.timer);
+			this.timer = setInterval(this.startPlay, (60 / this.state.bpm) * 1000);
+
+			this.setState({
+				count: 0,
+				bpm: 100,
+			});
+		} else {
+			this.setState({
+				bpm: 100,
+			});
+		}
 	};
 
 	// changing BPM value
